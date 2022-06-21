@@ -24,6 +24,11 @@ iso:
 	cp Kernel.elf Root/boot/
 	grub2-mkrescue Root -o Colored.iso
 
+git:
+	git add .
+	git commit
+	git push -f origin
+
 asm:
 	# i686-elf-gcc -std=gnu99 -ffreestanding -g -c Source/Boot/Boot.s -o Boot.o
 	nasm -f elf Source/Boot/Boot.asm -o Boot.o
