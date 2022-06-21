@@ -1,6 +1,19 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/kokolor/GreySuite/OperatingSystem'
  
-make: 'Kernel.elf' is up to date.
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Kernel/Main.c -o Source/Kernel/Main.o
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Boot/BootInfo.c -o Source/Boot/BootInfo.o
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Include/Cpu/Gdt/Gdt.c -o Source/Include/Cpu/Gdt/Gdt.o
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Include/Cpu/Idt/Idt.c -o Source/Include/Cpu/Idt/Idt.o
+ 
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Include/Cpu/Idt/Interrupts.c -o Source/Include/Cpu/Idt/Interrupts.o
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Include/Framebuffer/Framebuffer.c -o Source/Include/Framebuffer/Framebuffer.o
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Include/Framebuffer/Font.c -o Source/Include/Framebuffer/Font.o
+ 
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Include/Common/Common.c -o Source/Include/Common/Common.o
+ 
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Include/Gui/Gui.c -o Source/Include/Gui/Gui.o
+make asm
+i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld Source/Kernel/Main.o Source/Boot/BootInfo.o Source/Include/Cpu/Gdt/Gdt.o Source/Include/Cpu/Idt/Idt.o Source/Include/Cpu/Idt/Interrupts.o Source/Include/Framebuffer/Framebuffer.o Source/Include/Framebuffer/Font.o Source/Include/Common/Common.o Source/Include/Gui/Gui.o Boot.o InterruptsAsm.o -o Kernel.elf -lgcc
 make: Leaving directory '/home/kokolor/GreySuite/OperatingSystem'
  

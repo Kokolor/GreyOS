@@ -69,18 +69,6 @@ void PutChar(char C, int X, int Y, unsigned int Color){
         }
     }
 
-    // if (C != '\n')
-    // {
-    //     CursorX++;
-    //     CursorX++;
-    //     CursorX++;
-    //     CursorX++;
-    //     CursorX++;
-    //     CursorX++;
-    //     CursorX++;
-    //     CursorX++;
-    //     CursorX = 0;
-    // }
 }
 
 

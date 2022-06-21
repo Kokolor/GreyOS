@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun 21 19:37:39 2022
+# Make data base, printed on Tue Jun 21 20:32:34 2022
 
 # Variables
 
@@ -287,13 +287,13 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 2054, inode 1211527): 13 files, no impossibilities.
+ 
+# . (device 2054, inode 1211527): 8 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
- 
 %.o: %.c
 #  recipe to execute (from 'Makefile', line 6):
 	i686-elf-gcc -ISource -ffreestanding -g -c $< -o $@
@@ -333,7 +333,7 @@ debug:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 37):
+#  recipe to execute (from 'Makefile', line 42):
 	qemu-system-i386 -cdrom Colored.iso -s -S &
 	gdb
 	target remote localhost:1234
@@ -342,7 +342,7 @@ debug:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 19:37:25.985457686
+#  Last modified 2022-06-21 19:50:10.417551146
 #  File has been updated.
 #  Successfully updated.
 
@@ -350,7 +350,7 @@ bochs:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 43):
+#  recipe to execute (from 'Makefile', line 48):
 	bochs
 
 # Not a target:
@@ -388,6 +388,15 @@ Source/Kernel/Main.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+git:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 28):
+	git add .
+	git commit
+	git push -f origin
+
 # Not a target:
 Source/Include/Cpu/Gdt/Gdt.o:
 #  Implicit rule search has not been done.
@@ -410,7 +419,7 @@ asm:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 28):
+#  recipe to execute (from 'Makefile', line 33):
 	# i686-elf-gcc -std=gnu99 -ffreestanding -g -c Source/Boot/Boot.s -o Boot.o
 	nasm -f elf Source/Boot/Boot.asm -o Boot.o
 	nasm -f elf Source/Include/Cpu/Idt/InterruptsAsm.asm -o InterruptsAsm.o
@@ -426,7 +435,7 @@ run:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 33):
+#  recipe to execute (from 'Makefile', line 38):
 	make iso
 	qemu-system-i386 -m 256M -enable-kvm -cdrom ./Colored.iso
 
@@ -456,19 +465,19 @@ Source/Include/Gui/Gui.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=23/1024=2%, Rehash=0, Collisions=0/52=0%
+# Load=24/1024=2%, Rehash=0, Collisions=0/53=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 38 / storage = 493 B / avg = 12 B
-# current buf: size = 8162 B / used = 493 B / count = 38 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 35 / storage = 449 B / avg = 12 B
+# current buf: size = 8162 B / used = 449 B / count = 35 / avg = 12 B
 
-# strcache performance: lookups = 61 / hit rate = 37%
+# strcache performance: lookups = 58 / hit rate = 39%
 # hash-table stats:
-# Load=38/8192=0%, Rehash=0, Collisions=0/61=0%
-# Finished Make data base on Tue Jun 21 19:37:39 2022
+# Load=35/8192=0%, Rehash=0, Collisions=0/58=0%
+# Finished Make data base on Tue Jun 21 20:32:34 2022
 
  

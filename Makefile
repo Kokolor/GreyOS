@@ -3,15 +3,15 @@ OBJS := $(SRCS:.c=.o)
 
 .SUFFIXE: .c
 %.o: %.c
-	i686-elf-gcc -ISource -ffreestanding -g -c $< -o $@
+	compiler/i686-elf-gcc -ISource -ffreestanding -g -c $< -o $@
 
 Kernel.elf: $(OBJS)
 	make asm
-	i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld $(OBJS) Boot.o InterruptsAsm.o -o $@ -lgcc
+	compiler/i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld $(OBJS) Boot.o InterruptsAsm.o -o $@ -lgcc
 
 Kernel.bin: $(OBJS)
 	make asm
-	i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld $(OBJS) Boot.o InterruptsAsm.o -o $@ -lgcc
+	compiler/i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld $(OBJS) Boot.o InterruptsAsm.o -o $@ -lgcc
 
 clean:
 	rm -f $(OBJS)
