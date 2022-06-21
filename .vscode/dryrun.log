@@ -1,0 +1,7 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/kokolor/GreySuite/OperatingSystem'
+i686-elf-gcc -ISource -ffreestanding -g -c Source/Kernel/Main.c -o Source/Kernel/Main.o
+make asm
+i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld Source/Kernel/Main.o Source/Boot/BootInfo.o Source/Include/Cpu/Gdt/Gdt.o Source/Include/Framebuffer/Framebuffer.o Source/Include/Framebuffer/Font.o Source/Include/Common/Common.o Source/Include/Gui/Gui.o Source/Include/FileSystem/FileSystem.o Boot.o -o Kernel.elf -lgcc
+make: Leaving directory '/home/kokolor/GreySuite/OperatingSystem'
+ 

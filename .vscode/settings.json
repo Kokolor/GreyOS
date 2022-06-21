@@ -1,0 +1,17 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "files.associations": {
+        "gdt.h": "c",
+        "stddef.h": "c",
+        "bootinfo.h": "c",
+        "multiboot.h": "c",
+        "stdint.h": "c",
+        "common.h": "c",
+        "framebuffer.h": "c",
+        "interrupts.h": "c",
+        "stdbool.h": "c",
+        "filesystem.h": "c",
+        "font.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
