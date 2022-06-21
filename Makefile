@@ -7,11 +7,11 @@ OBJS := $(SRCS:.c=.o)
 
 Kernel.elf: $(OBJS)
 	make asm
-	i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld $(OBJS) Boot.o -o $@ -lgcc
+	i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld $(OBJS) Boot.o InterruptsAsm.o -o $@ -lgcc
 
 Kernel.bin: $(OBJS)
 	make asm
-	i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld $(OBJS) Boot.o Interrupts.o -o $@ -lgcc
+	i686-elf-gcc -std=gnu99 -ffreestanding -nostdlib -T Source/Linker.ld $(OBJS) Boot.o InterruptsAsm.o -o $@ -lgcc
 
 clean:
 	rm -f $(OBJS)
@@ -27,7 +27,7 @@ iso:
 asm:
 	# i686-elf-gcc -std=gnu99 -ffreestanding -g -c Source/Boot/Boot.s -o Boot.o
 	nasm -f elf Source/Boot/Boot.asm -o Boot.o
-	# nasm -f elf Source/Include/Cpu/Interrupts/Interrupts.asm -o Interrupts.o
+	nasm -f elf Source/Include/Cpu/Idt/InterruptsAsm.asm -o InterruptsAsm.o
 
 run: $(KERNEL_DISK)
 	make iso

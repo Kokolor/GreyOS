@@ -5,6 +5,9 @@
 #include <Include/Common/Common.h>
 #include "Font.h"
 
+extern int CursorX;
+extern int CursorY;
+
 #define Black      0x00000000 
 #define White      0x00FFFFFF 
 #define DarkGrey  0x00222222
